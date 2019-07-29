@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, inital-scale=1">
+	<title>Cube In Space</title>
+	<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body onmousemove="changepos(event)">
+	<div id="info-holder">
+		<div id="date-holder"><p id="date" class="ctx_face"></p></div>
+		<div id="pos-holder">
+			<p id="pos" class="ctx_face"></p>
+		</div>
+	</div>
+
+	<div class="wrap">
+		<div class="cube">
+			<div class="front"></div>
+			<div class="back"></div>
+			<div class="top"></div>
+			<div class="bottom"></div>
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+</body>
+
+<script type="text/javascript">
+	function setdata(){ 
+		document.getElementById("date").innerHTML = Date(); 
+	}
+	function changepos(e){ 
+		document.getElementById("pos").innerHTML = "X:" + e.clientX + ", Y:" + e.clientY; 
+	}
+	setInterval(setdata ,1000);
+</script>
+
+</html>
+
+<!-- WebDev Projects - cubeInSpace -->
+<!-- By Sarthak Jain -->
+

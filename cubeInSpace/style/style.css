@@ -1,0 +1,143 @@
+
+/* Using Image :  https://www.maxpixel.net/static/photo/1x/Backgrounds-Abstract-Background-Black-Background-1939128.jpg*/
+/* CC0 Public Domain : Free for commercial use  */
+/* Found it here : https://www.maxpixel.net/Backgrounds-Abstract-Background-Black-Background-1939128 */
+
+body{
+	margin-top:0px;
+	margin-bottom: 0px;
+	background-color: black;
+	height:98vh;
+	left:0px; right:0px; top:0px; bottom:0px;
+	width:80vw;
+	background: url("https://www.maxpixel.net/static/photo/1x/Backgrounds-Abstract-Background-Black-Background-1939128.jpg") repeat-x;
+	background-attachment: fixed;
+	background-position: top; 
+	background-size: cover;
+	font-family: Monospace !important;
+}
+
+#info-holder{
+	color:white;
+	position: absolute;
+	top:4px; left:0px;
+	font-size:14px;
+	padding:5px;
+	height:auto;
+	width:auto;
+}
+
+.ctx_face{
+	margin:4px;
+}
+
+#footer{
+	height: 10px;
+	width:100%;
+	position: fixed;
+	bottom:0px; left:0px; right:0px;
+	background-color: black;
+}
+
+.wrap {
+	position: absolute;
+	left:40vw; right:0px;
+	top:30%;
+	width:50vw;
+	perspective: 900px;
+	perspective-origin: 50% 100px;
+}
+
+.cube {
+	margin-right: 0px;
+	width: 200px;
+	transform-style: preserve-3d;
+}
+
+.cube div {
+	background-color: rgba(15,15,15,0.1); /*Non Existent*/
+	position: absolute;
+	border:1px solid white;
+	width: 200px;
+	height: 200px;
+}
+
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+}
+
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+}
+
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+}
+
+.bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+}
+
+.front {
+	transform: translateZ(100px);
+}
+
+@keyframes foobar{
+	0%{background-color:rgb(256, 0, 0);}
+	50%{background-color:rgb(0, 256, 0);}
+	100%{background-color:rgb(0, 0, 256);}
+}
+
+@keyframes bgdynamic {
+	0% { background: #1357ec;}
+	25% { background: #00ffff;}
+	50% { background:  #99ff33;}
+	75% { background:#8f0070;}
+	100% { background: #f96106;}
+}
+
+@keyframes spin {
+	from { transform: rotateY(0deg);}
+	to { transform: rotateY(360deg);}
+}
+
+@keyframes tilt{
+	0% { transform: rotateZ(5deg);}
+	100% { transform: rotateZ(-5deg);}
+}
+
+@keyframes slide{
+	0%{ background-position: 0vw; }
+	50%{ background-position: -50vw; }
+	100%{ background-position: 0vw; }
+}
+
+.cube {
+	animation: spin 15s infinite linear;
+}
+
+.wrap{
+	animation: tilt 5s infinite linear;
+	animation-direction: alternate;
+}
+
+body{
+	animation: slide 60s linear infinite;
+	animation-direction: alternate-reverse;			
+}
+
+#footer{
+	animation: 10s bgdynamic infinite;
+	animation-direction: alternate;			
+}
+
+/* WebDev Projects - cubeInSpace */
+/* By Sarthak Jain */
