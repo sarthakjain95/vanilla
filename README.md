@@ -1,4 +1,4 @@
 # WebDev
 
-Contains all of my Projects related to WebDevelopment.
+Contains my Projects related to WebDevelopment.
 
