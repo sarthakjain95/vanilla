@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1">
+		<title>NightSky</title>
+
+        	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Oxygen:300,400" rel="stylesheet"> 
+		
+		<!--
+        	font-family: 'Nanum Gothic', sans-serif;
+		font-family: 'Oxygen', sans-serif;
+		-->
+
+		<style>
+			/*-webkit-box-shadow: 0 0 70px -1px #99F;*/
+			body{
+				background-color:black;
+				background-image: linear-gradient(to bottom,rgba(0,0,0,0.1) 230px,#000B19,#0b1643);;
+				margin:0px;
+				height:100vh;
+				cursor:default;
+				-webkit-user-select:none;
+				user-select:none;
+			}
+
+			@keyframes energize{
+				0%{ text-shadow:0px 0px 10px white; }
+				50%{ text-shadow:0px 0px 5px white; }
+				100%{ text-shadow:0px 0px 1px white; }
+			}
+			
+			@keyframes move{
+				0%{ margin-left:0px; margin-top:0px; background-image: linear-gradient(black 2%,white); }
+				20%{ margin-left:-20px; margin-top:20px; background-image: linear-gradient(black 3%,white); }
+				30%{ margin-left:-30px; margin-top:30px; background-image: linear-gradient(black 4%,white); }
+				35%{ margin-left:-45px; margin-top:45px; background-image: linear-gradient(black 5%,white); }
+				50%{ margin-left:-60px; margin-top:60px; background-image: linear-gradient(black 56%,white); }
+				60%{ margin-left:-80px; margin-top:80px; background-image: linear-gradient(black 64%,white); }
+				65%{ margin-left:-90px; margin-top:90px; background-image: linear-gradient(black 72%,white); }
+				70%{ margin-left:-100px; margin-top:100px; background-image: linear-gradient(black 80%,white); }
+				100%{ margin-left:-130px; margin-top:130px; background-image: linear-gradient(black 98%,white); }
+			}
+
+
+			.star{
+				height:2px;
+				width:2px;
+				box-shadow: 0px 0px 2px white;
+				background-color:white;
+				position: fixed;
+				z-index:30;
+			}
+
+			.tail{
+				position: fixed;
+				transform:rotateZ(45deg);
+				border-bottom-left-radius: 2px;
+				border-bottom-right-radius: 2px;
+				animation-name: move;
+				animation-duration: 0.9s;
+				animation-iteration-count: 1;
+			}
+
+			#mountain-view-holder{
+				position: absolute;
+				left:0px;
+				right:0px;
+				bottom:0px;
+				height:auto;
+				margin:0px;
+				z-index: 100;
+			}
+
+			#click-position-holder{
+				position: fixed;
+				top:0px;
+				height:30px;
+				left:0px; right:0px;
+				font-family: 'Nanum Gothic', sans-serif;
+				color:white;
+				font-weight:600;
+				font-size: 13px;
+				line-height: 30px;
+				text-align: left;
+				padding:2px 8px;
+				letter-spacing: 1px;
+				animation-duration: 1s;
+				animation-iteration-count: 1;
+			}
+
+			body:active #click-position-holder{
+				animation-name: energize;
+			}
+
+			@media screen and (max-width: 768px){
+				#click-position-holder{
+					text-align: center;
+				}
+			}
+
+			#mountain-view-holder img{
+				background-repeat: repeat-x;
+				width:100%;
+				margin-bottom: -3px;
+			}
+
+		</style>
+
+	</head>
+
+	<body onmousedown="updateTarget(event)" >
+		<div id="click-position-holder">
+			<div id="click-position-value"></div>
+		</div>
+
+		<div id="stars-holder"></div>
+		
+		<div id="mountain-view-holder">
+			<img src="Forests/forest.svg">
+			<!-- Image By Gordon Johnson From Pixabay -->
+			<!-- https://pixabay.com/users/GDJ-1086657/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4450701 -->
+			<!-- https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4450701 -->
+		</div>
+
+	</body>
+
+
+	<script src="scripts/script.js"></script>
+</html>
