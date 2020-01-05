@@ -1,0 +1,26 @@
+
+
+
+body{
+	background-color: black;
+	height: 100vh;
+	width: 100vw;
+	margin: 0px;
+	padding: 0p;
+}
+
+canvas{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: block;
+	width: 99vw;
+	height: 99vh;
+	/* border: 1px solid white; */
+	padding: 0;
+	background-color: white;
+}
+
