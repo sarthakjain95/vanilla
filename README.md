@@ -1,4 +1,3 @@
-# WebDev
+# Web Development Projects
 
-Contains my Projects related to WebDevelopment.
-
+Contains small webdev related projects.
